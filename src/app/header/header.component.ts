@@ -6,16 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public isShown: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-  }
+    const userMenu = document.querySelector('#user-menu');
+    const userMenuList = document.querySelector('#user-menu-list');
 
-  // tslint:disable-next-line:typedef
-  public userMenuToggle() {
-    this.isShown = !this.isShown;
-  }
+    userMenu.addEventListener('click', () => {
+      if (userMenuList.classList.contains('hidden')) {
+        userMenuList.classList.remove('hidden');
+      } else {
+        userMenuList.classList.add('hidden');
+      }
+    });
 
+  }
 }
