@@ -21,5 +21,14 @@ export class HeaderComponent implements OnInit {
       }
     });
 
+    const burger = document.querySelector('#burger');
+    const burgerList = document.querySelector('#burger-List');
+    burger.addEventListener('click', () => {
+      if (burgerList.classList.contains('hidden')) {
+        burgerList.classList.remove('hidden');
+      } else {
+          burgerList.classList.add('hidden');
+        }
+    });
   }
 }
